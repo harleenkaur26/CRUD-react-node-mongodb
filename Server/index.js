@@ -5,8 +5,10 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const Listing = require("./models/listingSchema");
+require('dotenv').config(); 
 
-const dbURL = "mongodb://127.0.0.1:27017/MovieApp";
+// const dbURL = "mongodb://127.0.0.1:27017/MovieApp";
+const atlasUrl = process.env.ATLASDB_URL;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -25,7 +27,7 @@ main()
   });
 
 async function main() {
-  await mongoose.connect(dbURL);
+  await mongoose.connect(atlasUrl);
 }
 
 app.get("/", function (req, res) {

@@ -3,9 +3,10 @@ const app = express();
 const mongoose = require("mongoose");
 const initData = require("../initDB/data")
 const Listing = require("../models/listingSchema")
+require('dotenv').config(); 
 
-
-const dbURL = "mongodb://127.0.0.1:27017/MovieApp";
+// const dbURL = "mongodb://127.0.0.1:27017/MovieApp";
+const atlasUrl = process.env.ATLASDB_URL;
 
 main()
   .then(() => {
@@ -16,7 +17,7 @@ main()
   });
 
 async function main() {
-  await mongoose.connect(dbURL);
+  await mongoose.connect(atlasUrl);
 }
 
 const initDB = async () =>{

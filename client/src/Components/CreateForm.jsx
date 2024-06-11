@@ -59,9 +59,9 @@ function CreateForm() {
               onChange={handleChange} 
               required
             />
-            <Form.Text className="text-muted">
+            {/* <Form.Text className="text-muted">
               Add The New Movie in Database.
-            </Form.Text>
+            </Form.Text> */}
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicDescription">
@@ -100,3 +100,6 @@ function CreateForm() {
 }
 
 export default CreateForm;
+
+
+
