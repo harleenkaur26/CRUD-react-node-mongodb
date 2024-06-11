@@ -20,7 +20,7 @@ function EditForm() {
     const fetchListing = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/listings/edit/${id}`
+          `https://crudify-zm8q.onrender.com/listings/edit/${id}`
         );
         setFormData(response.data);
       } catch (error) {
@@ -43,7 +43,7 @@ function EditForm() {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:8080/listings/edit/${id}`,
+        `https://crudify-zm8q.onrender.com/listings/edit/${id}`,
         formData
       );
       if (response.status === 200) {

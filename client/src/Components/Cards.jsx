@@ -12,7 +12,7 @@ function Cards() {
   useEffect(() => {
       const fetchListings = async () => {
           try {
-              const response = await axios.get('http://localhost:8080/listings'); 
+              const response = await axios.get('https://crudify-zm8q.onrender.com/listings'); 
               setListings(response.data);
           } catch (error) {
               console.error('Error fetching listings:', error);
@@ -31,7 +31,7 @@ function Cards() {
  
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/listings/${id}`);
+      await axios.delete(`https://crudify-zm8q.onrender.com/listings/${id}`);
       // Remove the deleted listing from the state
       setListings(listings.filter(listing => listing._id !== id));
       toast.success('Listing deleted successfully');
